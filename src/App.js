@@ -3,6 +3,7 @@
 import React from "react"
 import axios from "axios"
 import PropTypes from "prop-types"
+import LoginForm from "./components/LoginForm"
 // import {defaultState} from "appStateUtils"
 
 import "./App.css"
@@ -31,23 +32,6 @@ const initNexmoApp = async (token) => {
     window.nexmoApp = nexmoApp
   }
   return nexmoApp
-}
-
-const LoginForm = ({onSubmit, onUserNameChange, username}) => {
-  return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor="username">
-        user name:
-        <input type="text" name="username" value={username} onChange={onUserNameChange} />
-      </label>
-      <input type="submit" value="Login" />
-    </form>
-  )
-}
-LoginForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  onUserNameChange: PropTypes.func.isRequired,
-  username: PropTypes.string.isRequired,
 }
 
 // class AudioStream extends React.Component {
